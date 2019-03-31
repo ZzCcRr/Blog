@@ -1,0 +1,54 @@
+buildscript {
+    ext['thymeleaf.version'] = '3.0.3.RELEASE'
+    ext['thymeleaf-layout-dialect.version'] = '2.2.0'
+    ext['hibernate.version']='5.2.8.Final'
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'org.springframework.boot:spring-boot-gradle-plugin:1.5.2.RELEASE'
+    }
+}
+
+plugins {
+    id 'java'
+}
+
+apply plugin: 'org.springframework.boot'
+
+group = 'top.zcrpro'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.springframework.boot:spring-boot-starter-web'
+
+    testCompile 'org.springframework.boot:spring-boot-starter-test'
+
+    compile 'org.springframework.boot:spring-boot-starter-thymeleaf'
+
+    compile 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+    compile 'mysql:mysql-connector-java:6.0.5'
+
+    runtime 'com.h2database:h2:1.4.193'
+
+    // 添加  Spring Data Elasticsearch 的依赖
+    compile 'org.springframework.boot:spring-boot-starter-data-elasticsearch'
+
+    compile 'org.springframework.boot:spring-boot-starter-security'
+
+    compile 'org.thymeleaf.extras:thymeleaf-extras-springsecurity4:3.0.2.RELEASE'
+
+    compile 'org.apache.commons:commons-lang3:3.5'
+
+    compile 'es.nitaur.markdown:txtmark:0.16'
+
+
+    // 添加  JNA 的依赖
+    compile 'net.java.dev.jna:jna:4.3.0'
+}
